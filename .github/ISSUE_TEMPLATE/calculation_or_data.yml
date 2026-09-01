@@ -1,0 +1,100 @@
+name: Incorrect calculation or data
+description: Report an incorrect value, effect, timing, score or game data entry.
+title: "[Data/Calculation]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Report a wrong value or calculation here. Include the configuration needed to reproduce it.
+
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: Issue type
+      options:
+        - Team damage calculation
+        - Character or skill data
+        - Weapon data or effect
+        - Echo or Sonata data or effect
+        - Rotation or action timing
+        - Negative status or combat mechanic
+        - Build score
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: page
+    attributes:
+      label: Page URL
+      placeholder: https://wuwa-optimizer.com/...
+    validations:
+      required: true
+
+  - type: textarea
+    id: team
+    attributes:
+      label: Character or team
+      description: List the affected character, or all three team members in order.
+      placeholder: 1P Character A / 2P Character B / 3P Character C
+    validations:
+      required: true
+
+  - type: textarea
+    id: configuration
+    attributes:
+      label: Build and simulation configuration
+      description: Include levels, sequences, weapons, ranks, combat modes, Sonata sets, main Echo, enemy, rotation and selected window when relevant.
+      placeholder: |
+        Character A: Lv. 90, S0, Weapon X R1, Sonata Y, Main Echo Z
+        Character B: ...
+        Character C: ...
+        Enemy: ...
+        Rotation: ...
+        Window: Loop / 2 min
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Current result
+      description: Copy the displayed value, distribution, timing or effect behavior.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+      description: Give the expected value or behavior and explain the difference.
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Link the source or attach the screenshot, video or calculation used for comparison.
+    validations:
+      required: true
+
+  - type: textarea
+    id: warnings
+    attributes:
+      label: Calculation warnings
+      description: Copy any incomplete-data or unresolved-effect warnings shown by the simulator.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched the existing issues and did not find the same report.
+          required: true
+        - label: I checked that the compared results use the same team, builds, enemy, rotation and measurement window.
+          required: true
+        - label: I removed private account information from the report and attachments.
+          required: true

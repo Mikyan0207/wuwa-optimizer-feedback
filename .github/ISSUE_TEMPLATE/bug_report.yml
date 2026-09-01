@@ -1,0 +1,90 @@
+name: Bug report
+description: Report broken or unexpected behavior on wuwa-optimizer.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include passwords, access tokens, account identifiers, or other private information.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      options:
+        - Homepage
+        - Build Scorer
+        - Build Import / OCR
+        - Team Simulator
+        - Character Guides
+        - Rotations
+        - Profile and Builds
+        - Authentication
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: page
+    attributes:
+      label: Page URL
+      description: Copy the URL of the page where the problem occurred.
+      placeholder: https://wuwa-optimizer.com/...
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the problem and what you were doing when it occurred.
+      placeholder: The page shows...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Give the shortest sequence that reproduces the problem.
+      placeholder: |
+        1. Open...
+        2. Select...
+        3. Click...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: Explain what you expected to happen instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Browser and device
+      description: Include the browser, operating system and device type.
+      placeholder: Firefox, Windows 11, desktop
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Screenshots, video or console errors
+      description: Drag files here or paste any relevant error message.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched the existing issues and did not find the same report.
+          required: true
+        - label: I removed private account information from the report and attachments.
+          required: true
