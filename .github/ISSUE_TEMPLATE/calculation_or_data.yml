@@ -34,58 +34,16 @@ body:
       required: true
 
   - type: textarea
-    id: team
+    id: problem
     attributes:
-      label: Character or team
-      description: List the affected character, or all three team members in order.
-      placeholder: 1P Character A / 2P Character B / 3P Character C
-    validations:
-      required: true
-
-  - type: textarea
-    id: configuration
-    attributes:
-      label: Build and simulation configuration
-      description: Include levels, sequences, weapons, ranks, combat modes, Sonata sets, main Echo, enemy, rotation and selected window when relevant.
+      label: Describe the problem
+      description: Include the character or team, selected equipment and the result that appears incorrect. You can also add screenshots or sources.
       placeholder: |
-        Character A: Lv. 90, S0, Weapon X R1, Sonata Y, Main Echo Z
-        Character B: ...
-        Character C: ...
-        Enemy: ...
-        Rotation: ...
-        Window: Loop / 2 min
+        Character or team:
+        Equipment:
+        What looks wrong:
     validations:
       required: true
-
-  - type: textarea
-    id: actual
-    attributes:
-      label: Current result
-      description: Copy the displayed value, distribution, timing or effect behavior.
-    validations:
-      required: true
-
-  - type: textarea
-    id: expected
-    attributes:
-      label: Expected result
-      description: Give the expected value or behavior and explain the difference.
-    validations:
-      required: true
-
-  - type: textarea
-    id: evidence
-    attributes:
-      label: Evidence
-      description: Link the source or attach the screenshot, video or calculation used for comparison.
-    validations:
-      required: true
-
-  - type: textarea
-    id: warnings
-    attributes:
-      label: Calculation warnings
-      description: Copy any incomplete-data or unresolved-effect warnings shown by the simulator.
 
   - type: checkboxes
     id: checks
@@ -93,8 +51,6 @@ body:
       label: Before submitting
       options:
         - label: I searched the existing issues and did not find the same report.
-          required: true
-        - label: I checked that the compared results use the same team, builds, enemy, rotation and measurement window.
           required: true
         - label: I removed private account information from the report and attachments.
           required: true
